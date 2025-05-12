@@ -116,6 +116,24 @@ id,titulo,fecha,dia_semana,fuente,categoria
 115,‘That’s a first!’: Pope Leo XIV retweets liberal senator,2025-05-11,SUNDAY,MSNBC,positivo
 116,'A ninth-inning ask': Why Trump wants a whole new tax bracket,2025-05-11,SUNDAY,MSNBC,negativo
 117,‘Is he meeting the moment?’: Democrats question Hakeem Jeffries’ leadership against Trump,2025-05-11,SUNDAY,MSNBC,positivo
+118,ARI MELBER,2025-05-11,SUNDAY,MSNBC,negativo
+119,CHris hayes,2025-05-11,SUNDAY,MSNBC,negativo
+120,Jen Psaki,2025-05-11,SUNDAY,MSNBC,negativo
+121,CHRIS HAYES,2025-05-11,SUNDAY,MSNBC,negativo
+122,Stephanie Ruhle,2025-05-11,SUNDAY,MSNBC,negativo
+123,MSNBC Daily,2025-05-11,SUNDAY,MSNBC,negativo
+124,Know Your ValueREad More,2025-05-11,SUNDAY,MSNBC,negativo
+125,09:29,2025-05-11,SUNDAY,MSNBC,negativo
+126,Shows,2025-05-11,SUNDAY,MSNBC,negativo
+127,LATEST FROM NBC NEWS,2025-05-11,SUNDAY,MSNBC,negativo
+128,Deal of the Day,2025-05-11,SUNDAY,MSNBC,negativo
+129,Deal of the Day,2025-05-11,SUNDAY,MSNBC,negativo
+130,Deal of the Day: Beats’ newest earbuds are on sale for the first time ever,2025-05-11,SUNDAY,MSNBC,negativo
+131,Smart Gadgets,2025-05-11,SUNDAY,MSNBC,negativo
+132,Smart Gadgets,2025-05-11,SUNDAY,MSNBC,negativo
+133,"The best smart home gadgets for warm weather, as seen on NBC News Now",2025-05-11,SUNDAY,MSNBC,negativo
+134,Skin Care,2025-05-11,SUNDAY,MSNBC,negativo
+135,Skin Care,2025-05-11,SUNDAY,MSNBC,negativo
 136,Why is everyone suddenly using hypochlorous acid sprays on their face?,2025-05-11,SUNDAY,MSNBC,negativo
 137,Is fresh dog food better than kibble? We asked vets,2025-05-11,SUNDAY,MSNBC,negativo
 138,Deal of the Day,2025-05-11,SUNDAY,MSNBC,negativo
@@ -211,6 +229,26 @@ id,titulo,fecha,dia_semana,fuente,categoria
 228,"Salarios, guardias y complementos: los incentivos de las comunidades para conquistar a los médicos que terminan la residencia",2025-05-11,SUNDAY,El País,positivo
 229,El PP valenciano espera un gesto de Feijóo ante la debilidad de Mazón y el desafío de Camps,2025-05-11,SUNDAY,El País,positivo
 230,León XIV en un mundo cada vez más laico,2025-05-11,SUNDAY,El País,positivo
+231,ARI MELBER,2025-05-11,SUNDAY,MSNBC,negativo
+232,CHris hayes,2025-05-11,SUNDAY,MSNBC,negativo
+233,Jen Psaki,2025-05-11,SUNDAY,MSNBC,negativo
+234,CHRIS HAYES,2025-05-11,SUNDAY,MSNBC,negativo
+235,Stephanie Ruhle,2025-05-11,SUNDAY,MSNBC,negativo
+236,09:29,2025-05-11,SUNDAY,MSNBC,negativo
+237,Deal of the Day,2025-05-11,SUNDAY,MSNBC,negativo
+238,Deal of the Day,2025-05-11,SUNDAY,MSNBC,negativo
+239,Smart Gadgets,2025-05-11,SUNDAY,MSNBC,negativo
+240,Smart Gadgets,2025-05-11,SUNDAY,MSNBC,negativo
+241,Skin Care,2025-05-11,SUNDAY,MSNBC,negativo
+242,Skin Care,2025-05-11,SUNDAY,MSNBC,negativo
+243,Pets,2025-05-11,SUNDAY,MSNBC,negativo
+244,Pets,2025-05-11,SUNDAY,MSNBC,negativo
+245,Deal of the Day,2025-05-11,SUNDAY,MSNBC,negativo
+246,Deal of the Day,2025-05-11,SUNDAY,MSNBC,negativo
+247,Wellness,2025-05-11,SUNDAY,MSNBC,negativo
+248,Wellness,2025-05-11,SUNDAY,MSNBC,negativo
+249,The Data Point,2025-05-11,SUNDAY,MSNBC,negativo
+250,The Data Point,2025-05-11,SUNDAY,MSNBC,negativo
 251,Ucrania acepta la negociación directa que ofrece Rusia solo si hay un alto el fuego,2025-05-11,SUNDAY,El País,positivo
 252,Los Reyes rinden homenaje a la memoria de los republicanos españoles deportados en Mauthausen,2025-05-11,SUNDAY,El País,positivo
 253,El papa León XIV pide una “paz justa” en Ucrania y un alto el fuego en Gaza,2025-05-11,SUNDAY,El País,positivo
@@ -415,3 +453,23 @@ id,titulo,fecha,dia_semana,fuente,categoria
 452,"""Literatura y valentía"": el legado de Mario Vargas Llosa, según Andrés Oppenheimer",2025-05-11,SUNDAY,CNN,positivo
 453,Vargas Llosa y su compromiso con la libertad. Un repaso por cuatro de sus novelas más importantes,2025-05-11,SUNDAY,CNN,positivo
 454,35 obras del siglo XX que Mario Vargas Llosa recomendaba leer,2025-05-11,SUNDAY,CNN,positivo
+455,ARI MELBER,2025-05-11,SUNDAY,MSNBC,negativo
+456,CHris hayes,2025-05-11,SUNDAY,MSNBC,negativo
+457,Jen Psaki,2025-05-11,SUNDAY,MSNBC,negativo
+458,CHRIS HAYES,2025-05-11,SUNDAY,MSNBC,negativo
+459,Stephanie Ruhle,2025-05-11,SUNDAY,MSNBC,negativo
+460,09:29,2025-05-11,SUNDAY,MSNBC,negativo
+461,Deal of the Day,2025-05-11,SUNDAY,MSNBC,negativo
+462,Deal of the Day,2025-05-11,SUNDAY,MSNBC,negativo
+463,Smart Gadgets,2025-05-11,SUNDAY,MSNBC,negativo
+464,Smart Gadgets,2025-05-11,SUNDAY,MSNBC,negativo
+465,Skin Care,2025-05-11,SUNDAY,MSNBC,negativo
+466,Skin Care,2025-05-11,SUNDAY,MSNBC,negativo
+467,Pets,2025-05-11,SUNDAY,MSNBC,negativo
+468,Pets,2025-05-11,SUNDAY,MSNBC,negativo
+469,Deal of the Day,2025-05-11,SUNDAY,MSNBC,negativo
+470,Deal of the Day,2025-05-11,SUNDAY,MSNBC,negativo
+471,Wellness,2025-05-11,SUNDAY,MSNBC,negativo
+472,Wellness,2025-05-11,SUNDAY,MSNBC,negativo
+473,The Data Point,2025-05-11,SUNDAY,MSNBC,negativo
+474,The Data Point,2025-05-11,SUNDAY,MSNBC,negativo

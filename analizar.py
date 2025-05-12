@@ -2,6 +2,7 @@ import sqlite3
 import pandas as pd
 import sys
 import joblib
+import json
 from pathlib import Path
 from sklearn.feature_extraction.text import CountVectorizer
 from sklearn.naive_bayes import MultinomialNB
@@ -57,6 +58,7 @@ if modo_predecir:
 
     df["categoria"] = predicciones
     df.to_csv("resultado_con_predicciones.csv", index=False)
+    df.to_json("static/data.json", orient="records", force_ascii=False)
 
     conteo = df["categoria"].value_counts()
     estado = "positivo" if conteo.get("positivo", 0) >= conteo.get("negativo", 0) else "negativo"
@@ -64,129 +66,19 @@ if modo_predecir:
     with open("estado_dia.js", "w", encoding="utf-8") as f:
         f.write(f'document.body.className = "{estado}";\n')
 
-    def colorear_fila(row):
-        clase = "positivo" if row["categoria"] == "positivo" else "negativo"
-        return f'<tr class="{clase}"><td>{row["titulo"]}</td><td>{row["fuente"]}</td><td>{row["categoria"]}</td></tr>'
-
-    filas_html = "\n".join(df.apply(colorear_fila, axis=1))
-    html_completo = f"""<!DOCTYPE html>
-<html lang="es">
-<head>
-  <meta charset="UTF-8">
-  <title>Noticias Clasificadas</title>
-  <style>
-    body {{
-      font-family: Arial, sans-serif;
-      background-image: url('https://images.pexels.com/photos/518543/pexels-photo-518543.jpeg?auto=compress&cs=tinysrgb&w=800');
-      background-position: center;
-      background-attachment: fixed;
-      padding: 40px;
-    }}
-    h1 {{
-      text-align: center;
-      margin-bottom: 30px;
-    }}
-    table {{
-      width: 100%;
-      border-collapse: collapse;
-      background: white;
-    }}
-    th, td {{
-      border: 1px solid #ccc;
-      padding: 10px;
-      text-align: left;
-    }}
-    th {{
-      background-color: #333;
-      color: white;
-    }}
-    tr.positivo {{
-      background-color: #d4fcd4;
-    }}
-    tr.negativo {{
-      background-color: #ffd5d5;
-    }}
-  </style>
-</head>
-<body>
-  <h1>Noticias Clasificadas ({estado.upper()})</h1>
-  <table>
-    <thead>
-      <tr><th>Título</th><th>Fuente</th><th>Categoría</th></tr>
-    </thead>
-    <tbody>
-      {filas_html}
-    </tbody>
-  </table>
-</body>
-</html>"""
-
-    with open("noticias_resumen.html", "w", encoding="utf-8") as f:
-        f.write(html_completo)
-
     if "fuente" in df.columns:
-        conteo = df.groupby(["fuente", "categoria"]).size().unstack(fill_value=0)
-        porcentajes = conteo.div(conteo.sum(axis=1), axis=0).round(2)
+        resumen = df.groupby(["fuente", "categoria"]).size().unstack(fill_value=0)
+        resumen.to_csv("resumen_por_fuente.csv")
+        resumen.to_json("static/resumen_por_fuente.json", orient="index")
 
-        conteo.to_csv("resultado_resumen.csv")
-        porcentajes.to_csv("resultado_porcentajes.csv")
+        porcentajes = resumen.div(resumen.sum(axis=1), axis=0).round(2)
+        porcentajes.to_csv("porcentajes_por_fuente.csv")
+        porcentajes.to_json("static/porcentajes_por_fuente.json", orient="index")
 
-        with open("resumen_por_fuente.html", "w", encoding="utf-8") as f:
-            f.write(f"""<!DOCTYPE html>
-<html lang="es">
-<head>
-  <meta charset="UTF-8">
-  <title>Resumen por Fuente</title>
-  <style>
-    body {{ font-family: Arial; padding: 30px; background: #f5f5f5; }}
-    h1 {{ text-align: center; }}
-    table {{ border-collapse: collapse; width: 100%; background: white; }}
-    th, td {{ border: 1px solid #ccc; padding: 8px; text-align: center; }}
-    th {{ background: #222; color: white; }}
-  </style>
-</head>
-<body>
-  <h1>Noticias por Fuente y Categoría</h1>
-  {conteo.to_html()}
-</body>
-</html>""")
-
-        with open("porcentajes_por_fuente.html", "w", encoding="utf-8") as f:
-            f.write(f"""<!DOCTYPE html>
-<html lang="es">
-<head>
-  <meta charset="UTF-8">
-  <title>Porcentajes por Fuente</title>
-  <style>
-    body {{ font-family: Arial; padding: 30px; background: #f5f5f5; }}
-    h1 {{ text-align: center; }}
-    table {{ border-collapse: collapse; width: 100%; background: white; }}
-    th, td {{ border: 1px solid #ccc; padding: 8px; text-align: center; }}
-    th {{ background: #333; color: white; }}
-  </style>
-</head>
-<body>
-  <h1>Distribución Relativa de Categorías por Fuente</h1>
-  {porcentajes.to_html()}
-</body>
-</html>""")
-
-    print("Clasificación completada:")
-    print(conteo)
-    print("Archivos generados:")
+    print("Clasificación completada. Archivos generados:")
     print("- resultado_con_predicciones.csv")
-    print("- estado_dia.js")
-    print("- noticias_resumen.html")
-    print("- resumen_por_fuente.html")
-    print("- porcentajes_por_fuente.html")
+    print("- static/data.json")
+    print("- static/resumen_por_fuente.json")
+    print("- static/porcentajes_por_fuente.json")
+    print("- scripts/estado_dia.js")
     sys.exit(0)
-
-conn = sqlite3.connect('data/noticias.db')
-df = pd.read_sql_query("SELECT * FROM noticias", conn)
-conn.close()
-
-print("Noticias totales:", len(df))
-if "fuente" in df.columns and "dia_semana" in df.columns:
-    resumen = df.groupby(["fuente", "dia_semana"]).size().unstack(fill_value=0)
-    print("\nResumen por fuente y día:")
-    print(resumen)
