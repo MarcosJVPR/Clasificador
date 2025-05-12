@@ -2,8 +2,8 @@ name: Ejecutar analizar.py diariamente
 
 on:
   schedule:
-    - cron: '0 6 * * *'  
-  workflow_dispatch:      
+    - cron: '0 6 * * *'
+  workflow_dispatch:
 
 jobs:
   ejecutar-analizar:
@@ -12,6 +12,9 @@ jobs:
     steps:
       - name: Clonar el repositorio
         uses: actions/checkout@v4
+
+      - name: Mostrar estructura del proyecto
+        run: ls -R
 
       - name: Instalar Python
         uses: actions/setup-python@v4
@@ -24,4 +27,6 @@ jobs:
           pip install pandas scikit-learn joblib
 
       - name: Ejecutar script
-        run: python analizar.py --predecir
+        run: |
+          echo "Ejecutando analizar.py..."
+          python analizar.py --predecir
